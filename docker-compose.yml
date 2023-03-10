@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  api-test:
+    container_name: api-test
+    image: api-test_img
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8081:8081
+
