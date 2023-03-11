@@ -1,4 +1,8 @@
 FROM maven:3.3-jdk-8 AS build-env
+
+ARG JAVA_ENV
+ENV java_env=$JAVA_ENV
+
 WORKDIR /usr/src/mymaven
 COPY .  ./
 RUN mvn clean install
