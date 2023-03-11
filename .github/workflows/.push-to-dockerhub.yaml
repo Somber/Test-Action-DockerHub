@@ -30,6 +30,6 @@ jobs:
         with:
           context: .
           build-args: |
-            "ENTORNO=-Dspring.profiles.active=pro"
+            "JAVA_ENV=dev"
           push: true
-          tags: somber/api-test_img:v5
+          tags: somber/api-test_img:v6
