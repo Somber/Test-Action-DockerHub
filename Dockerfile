@@ -6,4 +6,5 @@ RUN mvn clean install
 FROM openjdk:8-alpine
 WORKDIR /usr/share/
 COPY  --from=build-env /usr/src/mymaven/target/apitest5*.jar ./app.jar
-ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/share/app.jar"]
+ARG ENTORNO
+ENTRYPOINT ["/usr/bin/java", "-jar", $ENTORNO, "/usr/share/app.jar"]

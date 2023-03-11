@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     branches:
-      - 'master'
+      - 'dev'
 
 jobs:
   docker:
@@ -30,6 +30,6 @@ jobs:
         with:
           context: .
           build-args: |
-            "ENTORNO=pro"
+            "ENTORNO=dev"
           push: true
-          tags: somber/api-test_img:v5
+          tags: somber/api-test_img-dev:v5
