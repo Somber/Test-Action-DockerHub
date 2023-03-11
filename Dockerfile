@@ -7,4 +7,6 @@ FROM openjdk:8-alpine
 WORKDIR /usr/share/
 COPY  --from=build-env /usr/src/mymaven/target/apitest5*.jar ./app.jar
 ARG ENTORNO
+
+RUN echo entorno $ENTORNO
 ENTRYPOINT ["/usr/bin/java", "-jar", $ENTORNO, "/usr/share/app.jar"]
