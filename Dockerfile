@@ -8,7 +8,6 @@ WORKDIR /usr/share/
 COPY  --from=build-env /usr/src/mymaven/target/apitest5*.jar ./app.jar
 
 ARG ENTORNO
+ENV entorno=$ENTORNO
 
-RUN echo entorno $ENTORNO
-
-ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/share/app.jar"]
+CMD /usr/bin/java -jar $entorno /usr/share/app.jar
